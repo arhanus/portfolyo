@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: Poppins, sans-serif; 
+}
+
+body{
+    
+    color: #ededed;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background-color:transparent;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+    align-items: center;
+}
+.logo{
+    position: relative;
+    text-decoration: none;
+    color: #ededed;
+    font-weight: 600;
+    font-size:25px;
+    
+    
+}
+
+.logo::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    
+
+}
+
+.navbar a{
+    text-decoration: none;
+    margin: 1.5rem;
+    color: #ededed;
+    font-weight: 500;
+    font-size: 18px;
+    transition: .3s;
+    
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: #00abf0;
+    
+}
+
+.home{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    color:#ededed;
+    background: url('home.jpg');
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.home-content{
+    max-width: 600px;    
+}
+
+.h1-container{
+    width: fit-content;
+    overflow: hidden;
+}
+
+.home-content h1{
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;  
+    animation: showUp 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0s;  
+    
+}
+
+.h3-container{
+    width: fit-content;
+    overflow: hidden;
+}
+
+.home-content h3{
+    font-size: 29px;
+    font-weight: 700;
+    color: #00abf0;
+    animation: showUp 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+}
+
+.p-container{
+    width: fit-content;
+    height: 70px;
+    overflow: hidden;
+}
+
+.home-content p{
+    font-size: 16px;
+    margin: 20px 0 40px;
+    animation: showUp 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+}
+
+.home-content .btn-box{
+    width: 345px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    
+    
+}
+
+
+.btn-box a{
+    position: relative;
+    display: inline-flex;
+    background-color: #00abf0;
+    border: 2px solid #00abf0;
+    width: 150px;
+    height: 100%;
+    border-radius: 8px;
+    font-size: 19px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #081b29;
+    letter-spacing: 1px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow: hidden;
+    
+    
+}
+
+.btn-box a:first-child{
+    animation: slideRight 1.5s cubic-bezier(0.77, 0, 0.175, 1) .5s;
+}
+
+.btn-box a:nth-child(2){
+    background: transparent;
+    color:#00abf0;
+    animation: slideRight 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+    
+}
+
+.btn-box a:nth-child(2)::before{
+    background: #00abf0;
+    
+    
+}
+
+.btn-box a:nth-child(2):hover{
+    color: #081b29;
+}
+
+.btn-box a:hover{
+color: #00abf0;
+transition: .5s;
+}
+
+.btn-box a::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background:#081b29;
+    z-index: -1;
+    transition: .5s;
+    
+}
+
+.btn-box a:hover::before{
+    width: 100%;
+    height: 100%;
+}
+
+.home-sci{
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    background:transparent;
+    padding: 10px;
+    border:2px solid #00abf0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color: #00abf0;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    
+
+    
+}
+
+.home-sci a:hover{
+    background: #00abf0;
+    transition: .5s;
+    color: white;
+    transform: translateY(-7px);
+}
+
+
+
+
+.home-imgHover{
+    position: absolute;
+    top: 0;
+    right:80px;
+    width: 700px;
+    height: 100%;
+    background: transparent;
+    transition: 2s;
+}
+
+.home-imgHover:hover{
+    background-color:#081b29;
+    opacity: .8;
+}
+
+
+
+@keyframes showUp{
+    0% {
+        transform: translate(0,100%);
+      }
+    100% {
+        transform: translate(0,0);
+      }
+}
+
+@keyframes slideRight{
+    from{
+        transform: translateX(-500px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+
+
+
+
+/* SORULACAKLAR:
+1- alltaki insta, twitter, likedin'in çerçevesinin üstünü büyütme, mouse'u üstünden çekince smooth bir geri dönüş animasyonu.
+2- yazıları animasyondan önce görünmez yapma.
+ 
+
+
+
+
